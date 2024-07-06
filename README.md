@@ -6,22 +6,6 @@
 
 <a href="https://angular.io"><img height= "24" src= "https://img.shields.io/badge/Angular 17-DD0031?style=for-the-badge&logo=angular&logoColor=white"></a> <a href="https://tailwindcss.com"><img height= "24" src= "https://img.shields.io/badge/Tailwind 3-0ea5e9?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
 
-#### Features
-
-- [x] Sidebar
-- [x] Dark Theme
-- [x] Navbar
-- [x] Footer
-- [x] Auth Module
-- [x] Dashboard Module
-- [x] Standalone components
-- [x] Angular Signals
-- [x] Multi Theme
-- [x] Tests E2E
-- [ ] User Module
-- [ ] Guards
-- [ ] Animations
-
 #### Commands
 
 | command                   | What it does?                                 |
