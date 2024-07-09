@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { NgClass, NgIf } from '@angular/common';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
+import { SpotitAuthService } from '../../services/spotit-auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -17,14 +18,27 @@ export class SignInComponent implements OnInit {
   submitted = false;
   passwordTextType!: boolean;
 
-  constructor(private readonly _formBuilder: FormBuilder, private readonly _router: Router) {}
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly _router: Router,
+    private spotitAuthService: SpotitAuthService
+  ) {
+    this.form = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+    });
+  }
+
+  loginWithSpotify() {
+    this.spotitAuthService.login();
+  }
 
   onClick() {
     console.log('Button clicked');
   }
 
   ngOnInit(): void {
-    this.form = this._formBuilder.group({
+    this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
